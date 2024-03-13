@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.model.Book;
 import com.example.service.BookService;
 
-@RestController //controllerであることを宣言
+@RestController //controllerであることを宣言??
 // @Controller //controllerであることを宣言
 public class BookController {
 	
