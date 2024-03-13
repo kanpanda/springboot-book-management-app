@@ -7,14 +7,16 @@ package com.example.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+// import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.model.Book;
 import com.example.service.BookService;
 
-@Controller //controllerであることを宣言
+@RestController //controllerであることを宣言
+// @Controller //controllerであることを宣言
 public class BookController {
 	
     @Autowired //BookServiceのインスタンスを保持

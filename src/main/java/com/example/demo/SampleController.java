@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 // RESTAPIという単語を知ってると理解が早いが、知らなければ、調べるより、手を動かしたほうがいい。
 @RestController
 // URLに/usersecondと入力することで、このclassに結び付くよ、というおまじない
-// http://localhost:8080/usersecond
+// http://localhost:8080/usersecond/sample
 @RequestMapping("/usersecond")
 @CrossOrigin(origins = "*")
 
