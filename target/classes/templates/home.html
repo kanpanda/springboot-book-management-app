@@ -1,0 +1,34 @@
+<!-- thymeleafを使って呼び出すhtmlファイル -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+    <title>勤怠管理ホーム</title>
+    </head>
+    <body>
+        <h1>勤怠管理ホーム</h1>
+        <p id="RealtimeClockArea"></p>
+        <button onclick="TimeStamping()">打刻</button>
+        <button onclick="location.href='list'">勤怠一覧</button>
+    </body>
+</html>
+
+<!-- 時間表示スクリプト -->
+<script>
+    function showClock() {
+        var nowTime = new Date(); 
+        var nowHour = nowTime.getHours();
+        var nowMin  = nowTime.getMinutes();
+        var nowSec  = nowTime.getSeconds();
+        var msg = nowHour + ":" + nowMin + ":" + nowSec;
+        document.getElementById("RealtimeClockArea").innerHTML = msg;
+    }
+    setInterval('showClock()',1000);
+</script>
+
+<style>
+    #RealtimeClockArea {
+        font-size: x-large;
+    }
+</style>
