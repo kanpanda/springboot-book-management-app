@@ -1,0 +1,21 @@
+<!-- htmlの作成 -->
+<!-- コントローラから渡された結果を画面に表示する -->
+
+
+<!DOCTYPE html>
+<!-- thymeleaf（テンプレートエンジン）を使う（javaっぽいコードを書くことができる -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>本の一覧表示です</title>
+</head>
+<body>
+    <table>
+        <tr th:each="book : ${bookList}" th:object="${book}">
+            <td th:text="*{id}"></td>
+            <td th:text="*{title}"></td>
+            <td th:text="*{price}"></td>
+        </tr>
+    </table>
+</body>
+</html>
