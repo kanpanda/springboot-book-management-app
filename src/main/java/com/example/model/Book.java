@@ -28,7 +28,6 @@ public class Book {
     // 本のタイトルを保持するフィールド
     private String title;
 	
-	
     @Column(name="price")
     // 本の値段を保持するフィールド
     private Integer price;
