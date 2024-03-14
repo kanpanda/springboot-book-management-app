@@ -17,7 +17,7 @@ import com.example.repository.BookRepository;
 @Transactional
 public class BookService {
 	
-    @Autowired //BookRepositoryのインスタンスを保持する
+    @Autowired //serviceクラスであるBookRepositoryのインスタンスを保持する
     BookRepository repository;
 	
     /**
@@ -25,6 +25,6 @@ public class BookService {
      * @return
      */
     public List<Book> findAll() {  //データベースからデータを取得する
-        return repository.findAll(); // データベースのデータをreturnする
+        return repository.findAll(); // データベースのデータを返却する
     }
 }

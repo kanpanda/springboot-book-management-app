@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.model.Book;
 
-//jpaRepositoryインターフェースを継承している
+//jpaRepositoryインターフェースを継承したBookRepositoryをつくる
 // Bookクラスを操作するために、JpaRepository<Book, Integer>とする
 // IntegerはBookクラスのIdの型を指定しています。
 public interface BookRepository extends JpaRepository<Book, Integer> {
