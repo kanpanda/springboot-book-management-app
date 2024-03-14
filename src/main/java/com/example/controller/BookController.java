@@ -4,11 +4,16 @@
 package com.example.controller;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
+
+import com.example.form.BookForm;
 import com.example.model.Book;
 import com.example.service.BookService;
 
@@ -30,7 +35,13 @@ public class BookController {
     @Autowired //BookServiceのインスタンスを保持
     BookService service;
     
-    @GetMapping("/list")    //getというパスに、GETリクエストが飛んでくると、この中身（以下のbooklistメソッド）が動く
+
+    /**------------------------------------------
+    ------------------------------------------
+     * 「bookList」メソッド・・・「http://localhost:8080/book-list」にアクセスがあったときのメソッド。本の情報をデータベースから取得して、画面に表示する。
+    ------------------------------------------
+     ------------------------------------------*/
+    @GetMapping("/book-list")    //getというパスに、GETリクエストが飛んでくると、この中身（以下のbooklistメソッド）が動く
     // 引数にModel modelを設定する
 	public String bookList(Model model) {
         // serviceをつかって、本の一覧をDBから取得する
@@ -42,4 +53,47 @@ public class BookController {
         // bookList.htmlの表示
         return ("bookList");
 	}
+
+
+    /**------------------------------------------
+    ------------------------------------------
+     * 「createBook」メソッド・・・「http://localhost:8080/book-create」にGetメソッドでアクセスがあったときのメソッド。本の新規登録画面を画面に表示する。
+     ------------------------------------------
+     ------------------------------------------*/
+    /**
+     * 新規登録画面を表示
+     * @param model
+     * @return 新規登録画面
+     */
+    @GetMapping("/book-create")
+    public String createBook(Model model) {
+
+        model.addAttribute("bookForm", new BookForm());
+        return "add";
+    }
+
+
+
+    /**------------------------------------------
+    ------------------------------------------
+     * 「saveBook」メソッド・・・「http://localhost:8080/book-create」にPostメソッドでアクセスがあったときのメソッド。画面で入力された情報をデータベースに登録する。登録完了後は一覧画面にリダイレクトする。
+    ------------------------------------------ 
+     ------------------------------------------*/
+     /**
+     * データベースに本を登録する
+     * @param bookForm
+     * @param model
+     * @return
+     */
+    @PostMapping("/book-create")
+    public String saveBook(@ModelAttribute BookForm bookForm, Model model) {
+
+        // 本を登録する
+        service.insert(bookForm);
+
+        // 本の一覧表示画面にリダイレクト
+        return "redirect:/book-list";
+    }
+
+
 }
