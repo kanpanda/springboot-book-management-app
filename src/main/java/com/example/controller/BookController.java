@@ -5,30 +5,22 @@
 package com.example.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-
-// import java.util.List;
-
-// import org.springframework.beans.factory.annotation.Autowired;
-// import org.springframework.stereotype.Controller;
-// import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import com.example.model.Book;
+import com.example.service.BookService;
+
+
+import org.springframework.web.bind.annotation.CrossOrigin;
 // import org.springframework.web.bind.annotation.RequestMapping;
 // import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.example.service.BookService;
-import com.example.model.Book;
-
-import org.springframework.ui.Model;
-
-// import com.example.model.Book;
-// import com.example.service.BookService;
 
 // restControllerであることの宣言　ざっくり、「APIであること宣言する」ぐらいの解釈でいいと思う。
-@RestController
+// restController　と　controllerの違い
+@Controller
 // URLに/booklistと入力することで、このclassに結び付くよ、というおまじない
 // http://localhost:8080/booklist/list
 // @RequestMapping("/booklist")がない場合、GetMappingで以下に書いたように、http://localhost:8080/list に接続
