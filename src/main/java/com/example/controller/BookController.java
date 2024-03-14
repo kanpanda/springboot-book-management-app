@@ -106,7 +106,7 @@ public class BookController {
 
 
 
-    
+
      // 編集画面を表示する
     @GetMapping("/book-edit")
     public String editBook(Model model, EditBookForm editBook) {
@@ -135,6 +135,20 @@ public class BookController {
         // 本の一覧画面にリダイレクト
         return "redirect:/book-list";
     }
+
+    
+    // 本の削除を行う
+    @GetMapping("/book-delete")
+    public String deleteBook(Model model, Book Book) {
+
+        // データベースのデータを削除する
+        service.delete(Book.getId());
+
+        // 本の一覧画面にリダイレクト
+        return "redirect:/book-list";
+		
+    }
+
 
 
 
