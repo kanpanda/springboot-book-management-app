@@ -12,5 +12,6 @@ public class Sample1Application {
 		SpringApplication.run(Sample1Application.class, args);
 	}
 
-	// http://localhost:8080/book-list　で本のリストが開くはず
+	// http://localhost:8080/book-list
+	// で本のリストが開くはず
 }
