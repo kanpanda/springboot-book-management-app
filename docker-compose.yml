@@ -1,4 +1,11 @@
 # dockerの設定を記載しているのがymlである
+# dockerの起動方法
+# 1. docker desktopを起動する
+# 2. vscodeのdocker-cpmpose.ymlを右クリック、compose upをクリック
+# 3.A5mk2を起動、任意のデータベースの名前で右クリック、データベースの追加と削除、テスト接続がOKならつながっている
+# 終了時
+# vscodeのdocker-cpmpose.ymlを右クリック、compose downをクリック
+
 
 version: "3"
 services:
