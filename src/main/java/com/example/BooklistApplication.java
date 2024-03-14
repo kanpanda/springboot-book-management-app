@@ -12,7 +12,8 @@ public class BooklistApplication {
 		SpringApplication.run(BooklistApplication.class, args);
 	}
 
-	// http://localhost:8080/book-list
+	// http://localhost:8080/bookList
+	// http://localhost:8080/list
 	// で本のリストが開くはず
 	// Sample1Application.javaのディレクトリ位置を動かしてもspringbootは動く
 

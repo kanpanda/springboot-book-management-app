@@ -1,7 +1,6 @@
 //コントローラクラスの作成
 // ユーザーからリクエストを受け取り、リクエストの内容に従ってサービスクラスを呼び出す
 // サービスクラスから結果を受け取り、その結果をレスポンスとしてユーザーに返却する
-
 package com.example.controller;
 
 import java.util.List;
@@ -13,13 +12,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import com.example.model.Book;
 import com.example.service.BookService;
 
-
 import org.springframework.web.bind.annotation.CrossOrigin;
 // import org.springframework.web.bind.annotation.RequestMapping;
 // import org.springframework.web.bind.annotation.ResponseBody;
 
 // restControllerであることの宣言　ざっくり、「APIであること宣言する」ぐらいの解釈でいいと思う。
-// restController　と　controllerの違い
+// restControllerとcontrollerの違い！
 @Controller
 // URLに/booklistと入力することで、このclassに結び付くよ、というおまじない
 // http://localhost:8080/booklist/list
