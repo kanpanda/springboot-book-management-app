@@ -15,14 +15,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 // import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+// import org.springframework.web.bind.annotation.RequestMapping;
 // import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.service.BookService;
 import com.example.model.Book;
 
-import ch.qos.logback.core.model.Model;
+import org.springframework.ui.Model;
 
 // import com.example.model.Book;
 // import com.example.service.BookService;
@@ -41,6 +41,7 @@ public class BookController {
     BookService service;
     
     @GetMapping("/list")    //getというパスに、GETリクエストが飛んでくると、この中身（以下のbooklistメソッド）が動く
+    // 引数にModel modelを設定する
 	public String bookList(Model model) {
         // serviceをつかって、本の一覧をDBから取得する
         List<Book> bookList = service.findAll();
