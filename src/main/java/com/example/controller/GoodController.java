@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,24 +15,23 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 // restControllerであることの宣言　ざっくり、「APIであること宣言する」ぐらいの解釈でいいと思う。
-// RESTAPIという単語を知ってると理解が早いが、知らなければ、調べるより、手を動かしたほうがいい。
 @RestController
-// URLに/userと入力することで、このclass(ここでいうと、HelloControllerクラス)に結び付くよ、というおまじない
-@RequestMapping("/user")
+// URLに/komekomeと入力することで、このclass(ここでいうと、GoodControllerクラス)に結び付くよ、というおまじない
+@RequestMapping("/komekome")
 // Corsの設定をいい感じにする
 @CrossOrigin(origins = "*")
-public class HelloController {
+public class GoodController {
 
 	// "Get"Mappingであることに注意。これは、「/getというパスに、GETリクエストが飛んでくると、この中身が動くよ」というおまじない。正確に言うと、上で指定したものを加味して「/user/get」である。
 	@GetMapping("/get")
 	// 返却する値をJSONで返せるようにいい感じにしてくれるおまじない。JSONというものは、形だけ知ってほしい。活用場所は、まだ知らなくていい。
-	// http://localhost:8080/user/get
+	// http://localhost:8080/komekome/get
 	// @ResponseBodyをつけたメソッドは戻り値がそのままレスポンスのコンテンツになる
 	@ResponseBody
 	public String getUser() {
-		String result = "Stringを返します";
-		String result2 = "Stringを返しますyo";
-		String result3 = result + "。そして、" + result2;
+		String result = "こんにちは！";
+		String result2 = "こんばんは";
+		String result3 = result + "。さらに、" + result2;
 		return result3;
 	}
 

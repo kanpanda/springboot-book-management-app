@@ -4,32 +4,30 @@
 
 package com.example.controller;
 
-import java.util.List;
+// import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.beans.factory.annotation.Autowired;
 // import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+// import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+// import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.model.Book;
-import com.example.service.BookService;
+// import com.example.model.Book;
+// import com.example.service.BookService;
 
-@RestController //controllerであることを宣言??
-// @Controller //controllerであることを宣言
+// restControllerであることの宣言　ざっくり、「APIであること宣言する」ぐらいの解釈でいいと思う。
+@RestController
+// URLに/booklistと入力することで、このclassに結び付くよ、というおまじない
+// http://localhost:8080/booklist/list
+@RequestMapping("/booklist")
+@CrossOrigin(origins = "*")
+
 public class BookController {
-	
-    @Autowired //BookServiceのインスタンスを保持
-    BookService service;
-	
-    @GetMapping("/book-list") // /book-listにリクエストが来た時にbookListメソッドを実行する
-    public String bookList(Model model) {
-		
-        // serviceクラスを使って、本の一覧をDBから取得する？？？？
-        List<Book> bookList = service.findAll();
-        // modelに本の一覧を設定して、画面に渡す
-        model.addAttribute("bookList", bookList);
-        // bookList.htmlの表示
-        return "bookList";
-    }
+    @GetMapping("/list")
+	public String Hello() {
+		return ("hellowwwwrold!これはブックリストコントローラだwasa");
+	}
 }

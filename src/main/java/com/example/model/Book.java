@@ -1,4 +1,4 @@
-// modelクラスの作成
+// modelパッケージの中にmodelクラスの作成
 // modelクラスはテーブルのデータを保持する役割を持つ
 package com.example.model;
 
