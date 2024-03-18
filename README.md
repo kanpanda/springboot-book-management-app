@@ -3,5 +3,8 @@
 
 
 # アプリケーションの起動方法
-1. dockerを起動する
-2. springbootをrunする
+1. dockerを起動する（dockerデスクトップを起動する、dockerの設定は/root/docker-compose.ymlに記載されている
+3. データベースを起動する（a5mk2を起動してmigrationのsqlをコピペする）
+2. springbootをrunする(BooklistApplicationでrunを押す）
+
+# フロントをReactにしたい
